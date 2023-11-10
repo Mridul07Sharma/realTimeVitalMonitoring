@@ -1,0 +1,24 @@
+.header {
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    background-color: gray;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    justify-content: center;
+}
+
+.header li {
+    margin-right: 25px;
+    float: left;
+}
+
+.header-link {
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+}
