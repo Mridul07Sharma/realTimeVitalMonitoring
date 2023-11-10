@@ -1,1 +1,1 @@
-<h1>Source Code for Major Project Health Monitoring App</h1>
+<h1><b>Major Project</b> Health Monitoring App</h1>
