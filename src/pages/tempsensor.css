@@ -1,0 +1,34 @@
+.heading-temp-sensor{
+    font-size: 45px;
+    font-weight: 900;
+    padding-top: 50px;
+}
+
+.temp-reading {
+    padding-top: 45px;
+    font-size: 25px;
+}
+
+.temp-type-text {
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    width: 20%;
+    border-radius: 8px;
+}
+
+.temp-type-text.normal{
+    background-color: blue;
+}
+
+.temp-type-text.moderate{
+    background-color: orange;
+}
+
+.temp-type-text.high{
+    background-color: brown;
+}
+
+.temp-detail-indicator {
+    margin-bottom: 80px;
+}
