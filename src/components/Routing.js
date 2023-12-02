@@ -1,8 +1,8 @@
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Tempsensor from "../pages/Tempsensor";
-import Sensor2 from "../pages/Sensor2";
-import Sensor3 from "../pages/Sensor3";
+import PulserateSensor from "../pages/pulserate-sensor";
+import Spo2Sensor from "../pages/Spo2-sensor";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -28,12 +28,12 @@ const appRouter = createBrowserRouter([
             element: <Tempsensor />
         },
         {
-            path: '/sensor2',
-            element: <Sensor2 />
+            path: '/pulserate-sensor',
+            element: <PulserateSensor />
         },
         {
-            path: '/sensor3',
-            element: <Sensor3 />
+            path: '/Spo2-sensor',
+            element: <Spo2Sensor />
         }
       ]
     }

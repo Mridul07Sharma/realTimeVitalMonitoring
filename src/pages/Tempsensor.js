@@ -1,13 +1,35 @@
 import { useState, useEffect } from "react";
+import Chart from "react-apexcharts";
+import {format} from 'date-fns';
 import "./tempsensor.css";
 
 const TempSensor = () => {
     const [tempReading, setTempReading] = useState(0);
+    const [options, setOptions] = useState({});
+    const [series, setSeries] = useState([]);
 
     useEffect(() => {
-        // Call to backend to update temp;
-        setTempReading(101);
-    }, []);
+        fetch("https://api.thingspeak.com/channels/2289856/feeds.json").then((res) => res.json())
+        .then((resJson) => {
+          setOptions({
+            chart: {
+              id: "basic-bar"
+            },
+            xaxis: {
+              categories: resJson.feeds.map((value) => { return ( format(new Date(value.created_at), 'p, dd/mm/yyyy') )})
+            }
+          });
+  
+          setSeries([{
+            name: "Temp",
+            data: resJson.feeds.map(value => value.field1) 
+          }]);
+            
+          setTempReading(resJson.feeds[resJson.feeds.length - 1].field1);
+        }).catch((error) => {
+          console.log(error);
+        });
+      }, []);
 
     return (<>
     <div className="container">
@@ -23,6 +45,14 @@ const TempSensor = () => {
                 {tempReading > 104 ? <p className="temp-type-text high">High Fever</p>: <></>}
             </div>
         </> : <></>}
+
+        <div className="container">
+        <Chart className="row d-flex justify-content-center" 
+               options={options}
+               series={series}
+               type="line"
+               width="90%" />
+        </div>
     </div>
     </>)
 }
