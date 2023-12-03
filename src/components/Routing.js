@@ -3,6 +3,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Tempsensor from "../pages/Tempsensor";
 import PulserateSensor from "../pages/pulserate-sensor";
 import Spo2Sensor from "../pages/Spo2-sensor";
+import Homepage from "../pages/homepage";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -21,7 +22,7 @@ const appRouter = createBrowserRouter([
       children: [
         {
             path: '/',
-            element: <h1>Please chose sensor from the navbar.</h1>
+            element: <Homepage />
         },
         {
             path: '/tempsensor',
