@@ -8,7 +8,7 @@ const Spo2Sensor = () => {
     const [series, setSeries] = useState([]);
     const [presentValue, setPresentValue] = useState(0);
 
-    useEffect(() => {
+    function Callbackend() {
       fetch("https://api.thingspeak.com/channels/2365352/feeds.json").then((res) => res.json())
       .then((resJson) => {
         setOptions({
@@ -29,6 +29,16 @@ const Spo2Sensor = () => {
       }).catch((error) => {
         console.log(error);
       });
+    }
+
+    useEffect(() => {
+      Callbackend();
+      
+      let loop = setInterval(() => Callbackend(), 2000);
+      
+      return () => {
+        clearInterval(loop);
+      }
     }, []);
 
     return (<>
@@ -38,12 +48,12 @@ const Spo2Sensor = () => {
             <p className="text-center Spo2-sensor-reading"> <b>Spo2 Sensor Reading: </b> {presentValue}.</p>
         </div>
 
-        <div className="container">
-        <Chart className="row d-flex justify-content-center" 
+        <div className="">
+        <Chart className="" 
                options={options}
                series={series}
                type="line"
-               width="90%" />
+               width="100%" />
         </div>
     </div>
     </>)

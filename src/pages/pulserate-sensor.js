@@ -8,7 +8,7 @@ const PulserateSensor = () => {
     const [series, setSeries] = useState([]);
     const [presentValue, setPresentValue] = useState(0);
 
-    useEffect(() => {
+    function Callbackend() {
       fetch("https://api.thingspeak.com/channels/2289858/feeds.json").then((res) => res.json())
       .then((resJson) => {
         setOptions({
@@ -29,6 +29,15 @@ const PulserateSensor = () => {
       }).catch((error) => {
         console.log(error);
       });
+    }
+
+    useEffect(() => {
+      Callbackend();
+      let loop = setInterval(() => Callbackend(), 2000);
+      
+      return () => {
+        clearInterval(loop);
+      }
     }, []);
 
     return (<>
@@ -38,12 +47,12 @@ const PulserateSensor = () => {
             <p className="text-center pulserate-sensor-reading"> <b>Pulserate Sensor Reading: </b> {presentValue}.</p>
         </div>
 
-        <div className="container">
-        <Chart className="row d-flex justify-content-center" 
+        <div className="">
+        <Chart className="" 
                options={options}
                series={series}
                type="line"
-               width="90%" />
+               width="100%" />
         </div>
     </div>
     </>)

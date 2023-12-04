@@ -8,8 +8,8 @@ const TempSensor = () => {
     const [options, setOptions] = useState({});
     const [series, setSeries] = useState([]);
 
-    useEffect(() => {
-        fetch("https://api.thingspeak.com/channels/2289856/feeds.json").then((res) => res.json())
+    function Callbackend() {
+      fetch("https://api.thingspeak.com/channels/2289856/feeds.json").then((res) => res.json())
         .then((resJson) => {
           setOptions({
             chart: {
@@ -29,6 +29,15 @@ const TempSensor = () => {
         }).catch((error) => {
           console.log(error);
         });
+    }
+
+    useEffect(() => {
+        Callbackend();
+        let loop = setInterval(() => Callbackend(), 2000);
+      
+      return () => {
+        clearInterval(loop);
+      }
       }, []);
 
     return (<>
@@ -46,12 +55,12 @@ const TempSensor = () => {
             </div>
         </> : <></>}
 
-        <div className="container">
-        <Chart className="row d-flex justify-content-center" 
+        <div className="">
+        <Chart className="" 
                options={options}
                series={series}
                type="line"
-               width="90%" />
+               width="100%" />
         </div>
     </div>
     </>)
