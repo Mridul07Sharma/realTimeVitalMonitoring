@@ -67,7 +67,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
           </Box>
         </main>
         {/* Footer */}
-        <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
+        <Box sx={{ bgcolor: 'background.paper', p: 5 }} component="footer">
           
           <Typography
             variant="subtitle1"
