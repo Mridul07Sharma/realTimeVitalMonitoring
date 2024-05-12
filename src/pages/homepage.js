@@ -51,7 +51,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
                 Real Time Vital Monitoring
               </Typography>
               <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              Introducing our cutting-edge IoT-based Health Monitoring System – a revolutionary solution designed to empower individuals
+              Introducing our cutting-edge IoT-based Real Time Vital Monitoring System – a revolutionary solution designed to empower individuals
                with real-time health insights. 
               </Typography>
               {/* <Stack
