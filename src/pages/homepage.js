@@ -48,7 +48,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
                 color="text.primary"
                 gutterBottom
               >
-                IoT Based Health Monitoring System
+                Real Time Vital Monitoring
               </Typography>
               <Typography variant="h5" align="center" color="text.secondary" paragraph>
               Introducing our cutting-edge IoT-based Health Monitoring System – a revolutionary solution designed to empower individuals
