@@ -54,7 +54,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
               Introducing our cutting-edge IoT-based Health Monitoring System – a revolutionary solution designed to empower individuals
                with real-time health insights. 
               </Typography>
-              <Stack
+              {/* <Stack
                 sx={{ pt: 4 }}
                 direction="row"
                 spacing={2}
@@ -62,7 +62,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
               >
                 <Button variant="contained">Login</Button>
                 <Button variant="outlined">Signup</Button>
-              </Stack>
+              </Stack> */}
             </Container>
           </Box>
         </main>
