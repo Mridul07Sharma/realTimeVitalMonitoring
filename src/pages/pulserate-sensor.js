@@ -9,7 +9,7 @@ const PulserateSensor = () => {
     const [presentValue, setPresentValue] = useState(0);
 
     function Callbackend() {
-      fetch("https://api.thingspeak.com/channels/2289858/feeds.json").then((res) => res.json())
+      fetch("https://api.thingspeak.com/channels/2545583/status.json").then((res) => res.json())
       .then((resJson) => {
         setOptions({
           chart: {

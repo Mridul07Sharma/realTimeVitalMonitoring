@@ -9,7 +9,7 @@ const TempSensor = () => {
     const [series, setSeries] = useState([]);
 
     function Callbackend() {
-      fetch("https://api.thingspeak.com/channels/2289856/feeds.json").then((res) => res.json())
+      fetch("https://api.thingspeak.com/channels/2545579/status.json").then((res) => res.json())
         .then((resJson) => {
           setOptions({
             chart: {
