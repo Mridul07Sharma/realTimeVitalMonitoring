@@ -9,7 +9,7 @@ const Spo2Sensor = () => {
     const [presentValue, setPresentValue] = useState(0);
 
     function Callbackend() {
-      fetch("https://api.thingspeak.com/channels/2545588/status.json").then((res) => res.json())
+      fetch("https://api.thingspeak.com/channels/2548560/status.json").then((res) => res.json())
       .then((resJson) => {
         setOptions({
           chart: {
