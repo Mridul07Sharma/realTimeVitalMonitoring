@@ -48,7 +48,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
                 color="text.primary"
                 gutterBottom
               >
-                Real Time Vital Monitoring
+                Connected Healthcare
               </Typography>
               <Typography variant="h5" align="center" color="text.secondary" paragraph>
               Introducing our cutting-edge IoT-based Real Time Vital Monitoring System – a revolutionary solution designed to empower individuals
