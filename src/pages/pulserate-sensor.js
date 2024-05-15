@@ -16,7 +16,7 @@ const PulserateSensor = () => {
             id: "basic-bar"
           },
           xaxis: {
-            categories: resJson.feeds.map((value) => { return ( format(new Date(value.created_at), 'p, dd/mm/yyyy') )})
+            categories: resJson.feeds.map((value) => { return ( format(new Date(value.created_at), 'p, dd/MM/yyyy') )})
           }
         });
 
